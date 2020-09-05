@@ -38,6 +38,10 @@ version pascal // 'pascal' does not seem to be installed.
 
 Download, put in your path.
 
+## Autocompletion
+
+Work in progress. There's a `version.completion` file that registers all known tools. Run `source version.completion` and you should now have tab completion in bash and zsh. You should set up your startup script (.bashrc or .zshrc or whatever) to source this file on startup. If you change the file, you can run the `make_completion` script to update the completion file and then re-source it. Still learning about this feature and may have something better in the future.
+
 ## Info
 Current version: v0.3.2
 
