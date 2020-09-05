@@ -1,0 +1,9 @@
+#! /bin/bash
+
+
+list=$(egrep -o "^tools_[^=]*" $(which version) | grep -oP "tools_\K(.*)" | tr '\n' ' ' )
+
+echo "#! /bin/bash" > version.completion
+echo "" >> version.completion
+
+echo "complete -W \"$list\" version" >> version.completion
