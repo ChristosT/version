@@ -1,9 +1,12 @@
 #! /bin/bash
 
+# Executing this script will create a file called `version.completion` based on all the currently recognized tools.
+# Run `source version.completion` and version will now have tab completion in bash and zsh.
+# You should source the completion file somewhere in your startup scripts. bashrc or zshrc.
+# If you add any tools, re-source the file.
 
 list=$(egrep -o "^tools_[^=]*" $(which version) | grep -oP "tools_\K(.*)" | tr '\n' ' ' )
 
 echo "#! /bin/bash" > version.completion
 echo "" >> version.completion
-
 echo "complete -W \"$list\" version" >> version.completion
